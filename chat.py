@@ -4,10 +4,6 @@ from streamlit_chat import message
 from database import get_redis_connection
 from chatbot import RetrievalAssistant, Message
 
-#set environment variable
-# Everything is accessible via the st.secrets dict:
-
-OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
 
 # Initialise database
 
@@ -59,7 +55,11 @@ def query(question):
 prompt = st.text_input(f"What do you want to know: ", key="input")
 
 if st.button('Submit', key='generationSubmit'):
+    #set environment variable
+    # Everything is accessible via the st.secrets dict:
 
+    OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
+    
     # Initialization
     if 'chat' not in st.session_state:
         st.session_state['chat'] = RetrievalAssistant()
