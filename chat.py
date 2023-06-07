@@ -4,6 +4,11 @@ from streamlit_chat import message
 from database import get_redis_connection
 from chatbot import RetrievalAssistant, Message
 
+#set environment variable
+# Everything is accessible via the st.secrets dict:
+
+st.write(OPENAI_API_KEY, st.secrets["OPENAI_API_KEY"])
+
 # Initialise database
 
 ## Initialise Redis connection
