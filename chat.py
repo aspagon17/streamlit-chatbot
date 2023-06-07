@@ -7,7 +7,7 @@ from chatbot import RetrievalAssistant, Message
 #set environment variable
 # Everything is accessible via the st.secrets dict:
 
-st.write(OPENAI_API_KEY, st.secrets["OPENAI_API_KEY"])
+st.write("OPENAI_API_KEY", st.secrets["OPENAI_API_KEY"])
 
 # Initialise database
 
