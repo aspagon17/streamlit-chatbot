@@ -1,5 +1,6 @@
 import streamlit as st
 from streamlit_chat import message
+import openai
 
 from database import get_redis_connection
 from chatbot import RetrievalAssistant, Message
