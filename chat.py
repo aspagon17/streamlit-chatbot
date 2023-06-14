@@ -11,7 +11,7 @@ from chatbot import RetrievalAssistant, Message
 redis_client = get_redis_connection()
 
 # Set instruction
-
+openai.api_key = st.secrets["OPENAI_API_KEY"]
 # System prompt requiring Question and Year to be extracted from the user
 system_prompt = '''
 You are a helpful Formula 1 knowledge base assistant. You need to capture a Question and Year from each customer.
@@ -58,7 +58,6 @@ if st.button('Submit', key='generationSubmit'):
     #set environment variable
     # Everything is accessible via the st.secrets dict:
 
-    OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
     
     # Initialization
     if 'chat' not in st.session_state:
